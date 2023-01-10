@@ -1,0 +1,90 @@
+@import "../variables.scss";
+
+/* Transition lors du chargement du menu à ajouter */
+
+.mobile-menu {
+  margin: 40px;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  position: fixed;
+  width: calc(100vw - 80px);
+  top: 0;
+
+  .menu-icon {
+    font-size: 22px;
+    color: $color-light;
+  }
+
+  & > nav {
+    text-align: right;
+  }
+
+  .close-icon {
+    font-size: 30px;
+    color: white;
+    position: fixed;
+    top: 30px;
+    right: 30px;
+  }
+
+  .menu-icon:hover,
+  .close-icon {
+    cursor: pointer;
+  }
+
+  .liens {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    overflow-y: scroll;
+
+    a,
+    & > i {
+      color: white;
+      margin: 12px;
+    }
+
+    a:nth-child(2) {
+      padding-top: 40px;
+    }
+
+    & > i:nth-last-child(1) {
+      padding-bottom: 40px;
+    }
+  }
+
+  nav {
+    a:hover,
+    i:hover {
+      color: $color-hover;
+    }
+  }
+
+  .active {
+    color: $color-hover;
+  }
+}
+
+.mobile-menu > nav {
+  text-align: end;
+}
+
+@media screen and (max-height: calc((27px + 12px * 2) * 12 + 40px * 2)) {
+  .mobile-menu .liens {
+    justify-content: initial;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .mobile-menu {
+    display: none;
+  }
+}

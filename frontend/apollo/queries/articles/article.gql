@@ -1,0 +1,27 @@
+query singleArticleQuery($slug: String!, $i18nLocale: I18NLocaleCode) {
+  articles(filters: { slug: { eq: $slug } }, locale: $i18nLocale) {
+    data {
+      id
+      attributes {
+        locale
+        title
+        introduction
+        outro
+        content
+        summary
+        image {
+          data {
+            attributes {
+              url
+            }
+          }
+        }
+        slug
+        translatedSlug
+        date
+        author
+        category
+      }
+    }
+  }
+}

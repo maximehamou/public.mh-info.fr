@@ -1,0 +1,27 @@
+query articlesQuery($i18nLocale: I18NLocaleCode) {
+  articles(
+    sort: "date:desc"
+    locale: $i18nLocale
+    pagination: { limit: 1000000 }
+  ) {
+    data {
+      id
+      attributes {
+        locale
+        title
+        summary
+        image {
+          data {
+            attributes {
+              url
+            }
+          }
+        }
+        slug
+        date
+        author
+        category
+      }
+    }
+  }
+}

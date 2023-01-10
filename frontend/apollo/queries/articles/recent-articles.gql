@@ -1,0 +1,23 @@
+query articlesQuery($i18nLocale: I18NLocaleCode) {
+  articles(sort: "date:desc", locale: $i18nLocale) {
+    data {
+      id
+      attributes {
+        locale
+        title
+        summary
+        image {
+          data {
+            attributes {
+              url
+            }
+          }
+        }
+        slug
+        date
+        author
+        category
+      }
+    }
+  }
+}
